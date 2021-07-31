@@ -1,0 +1,151 @@
+{
+  "bot_token": "ODcxMTA3MTY1Mjk1ODkwNTI2.YQWfxA.-QuAP6m8EajQjPlGLpP-FDryRho",
+  "bot_token_debug": "",
+
+  "trackers": 
+  {
+    "STOCKS-OPTIONS": 
+    {
+      "ACE": {
+        "alertCallerName": "test",
+        "channels_stocks": [
+          
+        ],
+        "channels_options": [
+          
+        ],
+        "tickers_mentioned": [
+          
+        ]
+      },
+      "KUMO": {
+        "alertCallerName": "test",
+        "channels_stocks": [
+          
+        ],
+        "channels_options": [
+          
+        ],
+        "tickers_mentioned": [
+          
+        ]
+      },
+      "R2K": {
+        "alertCallerName": "test",
+        "channels_stocks": [
+          
+        ],
+        "channels_options": [
+          
+        ],
+        "tickers_mentioned": [
+          
+        ]
+      },
+      "DOC": {
+        "alertCallerName": "test",
+        "channels_stocks": [
+          
+        ],
+        "channels_options": [
+          
+        ],
+        "tickers_mentioned": [
+          
+        ]
+      },
+      "LOTTO": {
+        "alertCallerName": "test",
+        "channels_stocks": [
+          
+        ],
+        "channels_options": [
+          
+        ],
+        "tickers_mentioned": [
+          
+        ]
+      },
+      "KETCHUP": {
+        "alertCallerName": "test",
+        "channels_stocks": [
+          
+        ],
+        "channels_options": [
+          
+        ],
+        "tickers_mentioned": [
+          
+        ]
+      },
+      "NITRO": {
+        "alertCallerName": "test",
+        "channels_stocks": [
+          
+        ],
+        "channels_options": [
+          
+        ],
+        "tickers_mentioned": [
+          
+        ]
+      },
+      "OXE": {
+        "alertCallerName": "test",
+        "channels_stocks": [
+          
+        ],
+        "channels_options": [
+          
+        ],
+        "tickers_mentioned": [
+          
+        ]
+      },
+      "KM": {
+        "alertCallerName": "test",
+         "channels_stocks": [
+          
+        ],
+        "channels_options": [
+          
+        ],
+        "tickers_mentioned": [
+          
+        ]
+      },
+      "SMALLACCOUNT": {
+        "alertCallerName": "test",
+
+        "channels_stocks": [
+          
+        ],
+        "channels_options": [
+          
+        ],
+        "tickers_mentioned": [
+          
+        ]
+      },
+      "CHALLENGE": {
+        "channels_stocks": [
+          
+        ],
+        "channels_options": [
+          
+        ],
+        "tickers_mentioned": [
+          
+        ]
+      }
+    },
+    
+    "CRYPTO": {
+      "ACE": {
+        "channels": [
+          
+        ]
+      }
+    }
+  }
+}
