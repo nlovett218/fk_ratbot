@@ -37,9 +37,30 @@ var local = {
         var getCommandString = getCommandsString();
         const embed = new Constants.Discord.MessageEmbed()
         //console.log(obj.result[0].mtg_startingDeck);
-        .setTitle(`TakingWallStreetBot Command List`)
+        .setTitle(`FK NameChangeDiscoveryBot Command List`)
         .setColor(Constants.color_codes["green"])
         .setDescription(`${getCommandString}`);
+
+        cmd.reply({embed});
+
+        Constants.removeIDRequest(cmd.author.id);
+
+        return;
+      }
+      if (args[1].toLowerCase() == 'notifications')
+      {
+
+        var getCommandString = getCommandsString();
+        const embed = new Constants.Discord.MessageEmbed()
+        //console.log(obj.result[0].mtg_startingDeck);
+        .setTitle(`FK NameChangeDiscoveryBot Notification Modes`)
+        .setColor(Constants.color_codes["green"])
+        .setDescription(`` +
+          `0 = Disabled\n` +
+          `1 = Notify when tracked player enters the server even if you are not on the server\n` + 
+          `2 = Only notify when tracked player enters under new name\n` + 
+          `3 = Only notify when you are on the server\n` +
+        ``);
 
         cmd.reply({embed});
 
@@ -66,14 +87,14 @@ var local = {
     embed.setDescription(`Creator: **${BotInfo.author()}**\n` +
     `Version: **${BotInfo.version()}**\n` +
     `Prefix: **${BotInfo.prefix()}**\n` +
-    `Description: **This bot will answer your questions you ask about certain tickers in chat.**\n` +
-    `Website: __**https://takingwallstreet.com/**__\n` +
+    `Description: **This bot will notify you when a tracked player has entered the server under a new and/or different name.**\n` +
     `\n` +
     `**NOTE:** This bot is still in the development process and some features may not work as intended or provide unexpected results. The bot will be restarted on many occasions.`);
     cmd.reply({embed});
 
     Constants.removeIDRequest(cmd.author.id);
-  }
+  },
+
 }
 
 module.exports = local;

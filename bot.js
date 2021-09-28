@@ -7,10 +7,8 @@ const HandleFunctionCall = require('./functions/HandleFunctionCall');
 //const repeating = require('repeating');
 const Topgg = require("@top-gg/sdk");
 const express = require("express");
-
+const checker = require('./checker')
 const app = express();
-
-const webhook = new Topgg.Webhook(Constants.bot_webhook_authorization);
 
 var listenServerInit = false;
 
@@ -23,7 +21,11 @@ Constants.BotInfo.logBotInfo();
 //This is where the start of our bot begins
 Constants.client.on('ready', async () => {
 
+  Constants.Group = require("./classes/Group");
+  Constants.Member = require("./classes/Member");
+
   Constants.USER.emit('success');
+  Constants.USER.emit('init-checker');
 });
 
 
@@ -39,6 +41,8 @@ Constants.USER.on('success', async function() {
 
 
   console.log("Registering trackers");
+
+  //await Constants.sendChannelMessage(`201841156990959616`, `Tracked user test has went offline!`);
 
   (async () => {
     var config = await Constants.readJSONFile(Constants.config_file);
@@ -80,5 +84,7 @@ process.on('SIGINT', async err => {
 
 (async () => {
   var config = await Constants.readJSONFile(Constants.config_file);
+
   Constants.client.login(config.bot_token);
+  console.log(Constants.returnNewID().toUpperCase());
 })();

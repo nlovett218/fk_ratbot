@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@discordjs/voice": "^0.5.5",
+    "@top-gg/sdk": "^3.1.2",
+    "canvas": "^2.8.0",
+    "cjs": "^0.0.11",
+    "discord.js": "^12.5.3",
+    "express": "^4.17.1",
+    "finnhub": "^1.2.5",
+    "get-between": "^1.0.1",
+    "moment": "^2.29.1",
+    "request": "^2.88.2",
+    "require-dir": "^1.2.0",
+    "snekfetch": "^4.0.4"
+  }
+}
