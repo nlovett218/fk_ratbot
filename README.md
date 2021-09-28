@@ -1,3 +1,3 @@
-# TakingWallStreetBot
+# FK_RatBot
 
-Simple bot that responds to users questions about certain tickers.
+Discord bot that notifies users of name changes on the Finders Keepers server.
