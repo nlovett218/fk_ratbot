@@ -93,11 +93,24 @@ var local = {
 
    var sindex = message.indexOf("]");
    var username = message.slice(sindex + 1, message.length).trim();
+   var gid = checker.GetGroupIDFromName(groupname);
+
 
    //console.log(username);
 
+   if (username == null || username == undefined || !username.replace(/\s/g, ''))
+   {
+     //console.log(`track: username is null or undefined`);
+
+     if (await Constants.doConfirmInput(cmd.author.id, cmd, message, `Do you want to start tracking all members in group ${groupname}?`, `You are now tracking ${groupname}!`, `Action canceled!`))
+     {
+       await checker.TrackGroup(cmd.author.id, gid);
+
+       return; //cmd.reply(`you have started tracking all members in this group!`);
+     }
+   }
+
    var user = Constants.returnClosestMatchToName([username]);
-   var gid = checker.GetGroupIDFromName(groupname);
 
    if (checker.GroupLimitReached(gid))
    {
@@ -164,8 +177,21 @@ var local = {
 
    //console.log(username);
 
-   var user = Constants.returnClosestMatchToName([username]);
    var gid = checker.GetGroupIDFromName(groupname);
+
+   if (username == null || username == undefined || !username.replace(/\s/g, ''))
+   {
+     //console.log(`track: username is null or undefined`);
+
+     if (await Constants.doConfirmInput(cmd.author.id, cmd, message, `Do you want to untrack all members in group ${groupname}?`, `You have untracked ${groupname}!`, `Action canceled!`))
+     {
+       await checker.UntrackGroup(cmd.author.id, gid);
+
+       return; //cmd.reply(`you have untracked all members in this group!`);
+     }
+   }
+
+   var user = Constants.returnClosestMatchToName([username]);
 
    if (user == null)
      return cmd.reply(`no user found`);

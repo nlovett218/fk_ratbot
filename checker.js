@@ -303,7 +303,7 @@ var export_functions = {
 
 			console.log(`Notifying ${NotifyMember} that ${GlobalUser.name.trim()} has came online!`);
 			await Constants.sendDirectMessage(NotifyMember, `Tracked user **${GlobalUser.name.trim()}** has came online under the name **${player.attributes.name.trim()}**!`, null)
-			await Constants.sendChannelMessage(NotifyMember, `Tracked user **${GlobalUser.name.trim()}** has came online under the name **${player.attributes.name.trim()}**!`);
+			//await Constants.sendChannelMessage(NotifyMember, `Tracked user **${GlobalUser.name.trim()}** has came online under the name **${player.attributes.name.trim()}**!`);
 		}
 	},
 
@@ -329,7 +329,7 @@ var export_functions = {
 				continue;
 
 			await Constants.sendDirectMessage(NotifyMember, `Tracked user **${GlobalUser.name.trim()}** has went offline!`, null);
-			await Constants.sendChannelMessage(NotifyMember, `Tracked user **${GlobalUser.name.trim()}** has went offline!`);
+			//await Constants.sendChannelMessage(NotifyMember, `Tracked user **${GlobalUser.name.trim()}** has went offline!`);
 		}
 	},
 
@@ -431,6 +431,33 @@ var export_functions = {
 
 		await Constants.TrackGlobalUser(callerId, pid);
 		await group.trackMember(callerId, pid);
+	},
+
+	TrackGroup:async function(callerId, gid)
+	{
+		var group = Groups.filter(group => group.gid().toLowerCase() == gid.toLowerCase())[0];
+
+		for (const member of group.members)
+		{
+			await Constants.TrackGlobalUser(callerId, member.bmid);
+			await group.trackMember(callerId, member.bmid);
+		}
+	},
+
+	UntrackGroup:async function(callerId, gid)
+	{
+		var group = Groups.filter(group => group.gid().toLowerCase() == gid.toLowerCase())[0];
+
+		for (const member of group.members)
+		{
+			await Constants.UntrackGlobalUser(callerId, member.bmid);
+			await group.untrackMember(callerId, member.bmid);
+
+			if (export_functions.GetTrackers(member.bmid).length >= 0)
+			{
+				await export_functions.RemoveMember(callerId, gid, member.bmid);
+			}
+		}
 	},
 
 	UntrackUser:async function(callerId, gid, pid)

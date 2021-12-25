@@ -48,7 +48,7 @@ var local = {
 
   reactionTimes: {
     test: 20000,
-    doConfirmInput: 10000,
+    doConfirmInput: 20000,
   },
 
   USER:new Events.EventEmitter(),
