@@ -1,3 +1,3 @@
-# TakingWallStreetBot
+# FK_NameChangeIdentifier
 
-Simple bot that responds to users questions about certain tickers.
+Simple bot that when run 24/7 will log and monitor all users of the Finders Keepers server.
